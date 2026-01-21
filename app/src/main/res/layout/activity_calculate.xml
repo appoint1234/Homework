@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111113">
+
+    <!-- 计算器“窗口” -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="18dp"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#1C1C1E">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- mac 窗口三色点 -->
+            <LinearLayout
+                android:id="@+id/windowDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/dot_red" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/dot_red" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/dot_green" />
+            </LinearLayout>
+
+            <!-- 显示“公式”（更像 mac 计算器） -->
+            <TextView
+                android:id="@+id/tvFormula"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
+                android:gravity="end"
+                android:fontFamily="monospace"
+                app:layout_constraintTop_toBottomOf="@id/windowDots"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <!-- 主显示屏 -->
+            <TextView
+                android:id="@+id/display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="44sp"
+                android:gravity="end"
+                android:fontFamily="monospace"
+                android:maxLines="1"
+                android:ellipsize="start"
+                app:layout_constraintTop_toBottomOf="@id/tvFormula"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 按键区 -->
+            <GridLayout
+                android:id="@+id/grid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:columnCount="4"
+                android:rowCount="5"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                app:layout_constraintTop_toBottomOf="@id/display"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Row 1 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAC"
+                    style="@style/CalcBtnFunc"
+                    android:text="AC"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSign"
+                    style="@style/CalcBtnFunc"
+                    android:text="±"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMod"
+                    style="@style/CalcBtnFunc"
+                    android:text="%"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDiv"
+                    style="@style/CalcBtnOp"
+                    android:text="÷"/>
+
+                <!-- Row 2 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn7"
+                    style="@style/CalcBtnNum"
+                    android:text="7"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn8"
+                    style="@style/CalcBtnNum"
+                    android:text="8"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn9"
+                    style="@style/CalcBtnNum"
+                    android:text="9"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMul"
+                    style="@style/CalcBtnOp"
+                    android:text="×"/>
+
+                <!-- Row 3 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn4"
+                    style="@style/CalcBtnNum"
+                    android:text="4"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn5"
+                    style="@style/CalcBtnNum"
+                    android:text="5"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn6"
+                    style="@style/CalcBtnNum"
+                    android:text="6"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSub"
+                    style="@style/CalcBtnOp"
+                    android:text="−"/>
+
+                <!-- Row 4 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn1"
+                    style="@style/CalcBtnNum"
+                    android:text="1"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn2"
+                    style="@style/CalcBtnNum"
+                    android:text="2"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn3"
+                    style="@style/CalcBtnNum"
+                    android:text="3"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAdd"
+                    style="@style/CalcBtnOp"
+                    android:text="+"/>
+
+                <!-- Row 5 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn0"
+                    style="@style/CalcBtnZero"
+                    android:text="0"
+                    android:layout_columnSpan="2" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDot"
+                    style="@style/CalcBtnNum"
+                    android:text="."/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEq"
+                    style="@style/CalcBtnOp"
+                    android:text="="/>
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
