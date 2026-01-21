@@ -1,0 +1,30 @@
+cat > .gitignore <<'EOF'
+# Gradle
+.gradle/
+**/build/
+build/
+
+# Local SDK path
+local.properties
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Android Studio captures
+captures/
+
+# Native build
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+EOF
