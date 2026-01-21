@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>网络请求</title>
+  <style>
+    body{ font-family:system-ui; padding:20px; }
+    button{ padding:10px 14px; cursor:pointer; }
+    pre{ background:#111; color:#0f0; padding:12px; border-radius:10px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h2>fetch 网络请求</h2>
+  <p>打开浏览器开发者工具 → Network，点按钮即可看到请求/响应。</p>
+  <button id="btn">发送请求</button>
+  <pre id="out">等待请求…</pre>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const out = document.getElementById("out");
+
+    btn.addEventListener("click", async () => {
+      out.textContent = "请求中…";
+      try {
+        // 公共测试接口：返回 JSON
+        const resp = await fetch("https://jsonplaceholder.typicode.com/todos/1", {
+          method: "GET",
+          headers: { "Accept": "application/json" }
+        });
+        const data = await resp.json();
+        out.textContent = JSON.stringify(data, null, 2);
+      } catch (e) {
+        out.textContent = "请求失败：" + e.message;
+      }
+    });
+  </script>
+</body>
+</html>

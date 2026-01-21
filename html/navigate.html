@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>顶部导航布局练习</title>
+  <link rel="stylesheet" href="../css/navigate.css" />
+</head>
+<body>
+  <!-- 顶部白色条 -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="meta">
+          <div class="site">腾讯网</div>
+          <div class="city">上海市 · 阴 27℃</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <input placeholder="搜索" />
+        <button>搜索</button>
+      </div>
+
+      <div class="right">
+        <a class="icon" href="javascript:void(0)">邮箱</a>
+        <a class="icon" href="javascript:void(0)">游戏</a>
+        <a class="btn ghost" href="javascript:void(0)">登录</a>
+        <a class="btn primary" href="javascript:void(0)">下载电脑版</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 蓝色导航条 -->
+  <nav class="nav">
+    <div class="wrap nav-wrap">
+      <a href="#">要闻</a><a href="#">热点</a><a href="#">财经</a><a href="#">科技</a>
+      <a href="#">教育</a><a href="#">娱乐</a><a href="#">电视剧</a><a href="#">体育</a>
+      <a href="#">NBA</a><a href="#">国际</a><a href="#">军事</a><a href="#">汽车</a>
+      <a href="#">房产</a><a href="#">健康</a><a href="#">视频</a><a href="#">游戏</a>
+      <a href="#">QQ游戏</a><a class="hot" href="#">电脑版</a><a href="#">更多 ▾</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="wrap">
+      <h2>布局说明</h2>
+      <p>上面是：白色顶栏（logo/城市/搜索/按钮） + 蓝色导航栏（flex 自动换行）。</p>
+    </div>
+  </main>
+</body>
+</html>

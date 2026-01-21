@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TodoList</title>
+  <link rel="stylesheet" href="../css/todo.css"/>
+</head>
+<body>
+  <main class="card">
+    <h1>TodoList</h1>
+
+    <div class="row">
+      <input id="todoInput" placeholder="输入待办，回车添加…" />
+      <button id="addBtn">添加</button>
+    </div>
+
+    <div class="meta">
+      <span id="stat">共 0 项</span>
+      <button id="clearDone" class="link">清除已完成</button>
+    </div>
+
+    <ul id="list" class="list"></ul>
+  </main>
+
+  <script src="../js/todo.js"></script>
+</body>
+</html>
